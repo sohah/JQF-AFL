@@ -7,7 +7,7 @@
 #                                              ->sv-comp-false.txt
 #
 
-DURATION=800
+DURATION=900
 
 PWD=$(pwd)
 unsafe_tasks=$PWD/afl-sv-comp/sv-comp-false.txt;

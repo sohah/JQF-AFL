@@ -61,7 +61,7 @@ TEST_FILE_PATH=$(python3 /media/soha/aac0ad21-227d-4952-81c1-3117f40e4379/home/o
 
 # build src files from benchmark
 echo TEST_FILE_PATH="$TEST_FILE_PATH"
-echo javac --release 11 -g -cp "./afl-sv-comp/:$(./scripts/classpath.sh)" -d $DIR/target/classes "$TEST_FILE_PATH" > "$SHELL_LOG"
+echo javac --release 11 -g -cp "./afl-sv-comp/:$(./scripts/classpath.sh)" -d $DIR/target/classes "$TEST_FILE_PATH" >> "$SHELL_LOG"
 
 javac --release 11 -g -cp "./afl-sv-comp/:$(./scripts/classpath.sh)" -d $DIR/target/classes "$TEST_FILE_PATH" >> "$SHELL_LOG"
 
