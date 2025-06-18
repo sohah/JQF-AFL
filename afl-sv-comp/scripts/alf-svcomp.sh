@@ -1,9 +1,8 @@
 #!/bin/bash
-SECONDS=0
-DURATION=800
 
-export RESULT="initial"
-
+#run this script as
+#./afl-sv-comp/scripts/alf-svcomp.sh --64 --propertyfile ../../bench-defs/sv-benchmarks/java/properties/assert_java.prp  ../../bench-defs/sv-benchmarks/java/common/ ../../bench-de
+ #fs/sv-benchmarks/java/jbmc-regression/boolean1
 
 # parse arguments
 declare -a BM
@@ -48,7 +47,7 @@ BENCHMARK_NAME=$(basename "$parent_dir")
 
 #LOG=`mktemp -t jpf-log.XXXXXX`
 #DIR=`mktemp -d -t jpf-benchmark.XXXXXX`
-DIR="$PWD/SV-COMP-LOG/$(date +'%m-%d-%y-%Hh-%Mm')/$BENCHMARK_NAME"
+DIR="$PWD/sv-comp-log/$(date +'%m-%d-%y-%Hh-%Mm')/$BENCHMARK_NAME"
 mkdir -p "$DIR"
 SHELL_LOG=$DIR/shellscript.log
 echo "TEMP_DIR=$DIR"
