@@ -7,7 +7,7 @@
 #                                              ->sv-comp-false.txt
 #
 
-DURATION=900
+FIND_OPTIONS="-name 'Main.java'"
 
 PWD=$(pwd)
 unsafe_tasks=$PWD/afl-sv-comp/sv-comp-false.txt;
@@ -15,9 +15,17 @@ while read -r line; do
   benchmark_yml="${line##*/}"        # Get 'coral22.yml'
   benchmark="${benchmark_yml%.yml}"       # Remove '.yml'
   dirname=$(echo "$line" | cut -d'/' -f1)
-  echo "$dirname"
+  FIND_OPTIONS="-name 'Main.java'"
+  source_path="$PWD/../../bench-defs/sv-benchmarks/java/$dirname/$benchmark"
+  files=(`eval "find $source_path $FIND_OPTIONS"`)
+  maintTest=${files[0]}
+  echo "benchmark=$benchmark"
+  echo "dirname=$dirname"
+  echo "files=$maintTest"
+  echo "PWD=$PWD"
+  TEST_FILE_PATH=$(python3 "$PWD"/afl-sv-comp/scripts/class_to_unit_test.py "$maintTest")
 
-  timeout "$DURATION"s ./afl-sv-comp/scripts/alf-svcomp.sh --64 --propertyfile $PWD/../../bench-defs/sv-benchmarks/java/properties/assert_java.prp  $PWD/../../bench-defs/sv-benchmarks/java/common/ $PWD/../../bench-defs/sv-benchmarks/java/"$dirname"/"$benchmark"
+  echo TEST_FILE_PATH="$TEST_FILE_PATH"
 done < "$unsafe_tasks"
 
 

@@ -7,6 +7,11 @@ public class Verifier {
 
   public static InputStream input;
 
+
+  public static void assume(boolean condition) {
+    assert false;
+  }
+
   public static byte nondetByte() throws IOException {
     int b = input.read();
     if (b == -1)

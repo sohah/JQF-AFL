@@ -56,7 +56,8 @@ def transform_java_class(input_file, new_name):
             class_renamed = True
 
         # Transform the main method signature
-        if re.match(r"public\s+static\s+void\s+main\s*\(\s*String\[\]\s+\w+\s*\)\s*\{?", stripped):
+        if re.match(r"public\s+static\s+void\s+main\s*\(\s*String\s+\w+\[\]\s*\)\s*\{", stripped) or \
+                re.match(r"public\s+static\s+void\s+main\s*\(\s*String\s*\[\]\s+\w+\s*\)\s*\{?", stripped):
             transformed_lines.append("    @Fuzz\n")
             line = "    public void mainTest(InputStream input) throws IOException {\n"
             inside_main = True
