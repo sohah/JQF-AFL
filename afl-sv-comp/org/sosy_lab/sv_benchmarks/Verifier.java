@@ -1,12 +1,16 @@
 package org.sosy_lab.sv_benchmarks;
 
 import java.io.*;
+import com.pholser.junit.quickcheck.internal.GeometricDistribution;
 
 
 public class Verifier {
 
   public static InputStream input;
 
+  private static GeometricDistribution geometricDistribution =
+      new GeometricDistribution();
+  private static SourceOfRandomness random = new SourceOfRandomness(new Radom());
 
   public static void assume(boolean condition) {
     assert false;
@@ -41,7 +45,7 @@ public class Verifier {
         throw new EOFException("Not enough bytes available in input stream to read an int");
       i = (i << 8) | b;
     }
-    return (short)i;
+    return (short) i;
   }
 
   public static int nondetInt() throws IOException {
@@ -90,6 +94,13 @@ public class Verifier {
   }
 
   public static String nondetString() throws IOException {
+    int b = input.read();
+    final int MEAN_STRING_LENGTH = 10;
+    if (b < 26) { //generate an invalid utf-8 encoding 10% of the time, i.e., that's 26/256 ≈ 10.2% of the byte range
+
+    } else { //generate a valid utf-8 encoding 90% of the time
+      int stringLength = geometricDistribution.sampleWithMean(MEAN_STRING_LENGTH, random);
+    }
 //    geometric distribution with mean of 10
 //     200 million range will represent the end of the string, for invalid encoding.
     //bitblashing (eager set conversion), choose randomly, and propagate and see the sequences
