@@ -100,8 +100,10 @@ public class Verifier {
     if (b == -1)
       throw new EOFException("Not enough bytes available in input stream to read an int");
     b = b & 0xFF; // Ensure b is treated as an unsigned byte
+    int size = -1;
     while (b
-        >= 26) { //generate an invalid utf-8 encoding 10% of the time, i.e., that's 25/256 ≈ 10% of the byte range
+        >= 26 && size < 200) { //generate an invalid utf-8 encoding 10% of the time, i.e., that's 25/256 ≈ 10% of the byte range
+      System.out.println("size so far = " + ++size);
       Object[] pair = readUTF8Char();
       boolean isValid = (boolean) pair[0];
       if (!isValid)

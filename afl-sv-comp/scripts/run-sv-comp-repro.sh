@@ -9,6 +9,9 @@
 
 ORIG_PWD=$(pwd)
 unsafe_tasks=$ORIG_PWD/afl-sv-comp/sv-comp-repro.txt;
+repro_result=$ORIG_PWD/repro_result.log
+echo > "$repro_result"
+
 while read -r line; do
   benchmark_yml="${line##*/}"        # Get 'coral22.yml'
   benchmark="${benchmark_yml%.yml}"       # Remove '.yml'
@@ -17,18 +20,39 @@ while read -r line; do
   echo "$dirname_path"
 
   echo running reproducability for "$benchmark"
-  for crashfile in "$dirname_path"/fuzz-results/crashes/*; do
-    # Skip README.txt
-    if [[ "$(basename "$crashfile")" == "README.txt" ]]; then
-        continue
-    fi
-    echo "running crash for file $crashfile"
-    jqf_repro_shell=$ORIG_PWD/bin
-    echo "jqf_repro_shell=$jqf_repro_shell"
-    cd "$dirname_path/target/classes" || exit 1
-    echo "$jqf_repro_shell/jqf-repro" -c .:.. MainTest mainTest "$crashfile"
-    "$jqf_repro_shell/jqf-repro" -c .:.. MainTest mainTest "$crashfile"
-  done
+
+
+  crash_dir="$dirname_path/fuzz-results/crashes"
+  repro_log=$dirname_path/repro.log
+  echo > "$repro_log"
+  # Count crash files excluding README.txt
+  crash_count=$(find "$crash_dir" -type f ! -name "README.txt" | wc -l)
+
+  if (( crash_count > 0 )); then
+      for crashfile in "$crash_dir"/*; do
+          if [[ "$(basename "$crashfile")" == "README.txt" ]]; then
+              continue
+          fi
+          echo "running crash for file $crashfile"
+          jqf_repro_shell="$ORIG_PWD/bin"
+          echo "jqf_repro_shell=$jqf_repro_shell"
+          cd "$dirname_path/target/classes" || exit 1
+          echo "$jqf_repro_shell/jqf-repro" -c .:.. MainTest mainTest "$crashfile"
+          "$jqf_repro_shell/jqf-repro" -c .:.. MainTest mainTest "$crashfile" | tee -a "$repro_log"
+      done
+  else
+      echo "No crash files to process."
+      echo "first attempting running on the seed"
+      "$jqf_repro_shell/jqf-repro" -c .:.. MainTest mainTest "$ORIG_PWD"/afl/testcases/random/random1000.bin | tee -a "$repro_log"
+  fi
+
+  grep "java.lang.AssertionError" "$repro_log" > /dev/null
+  if [ $? -eq 0 ]; then
+    echo "$line, UNSAFE" | tee -a "$repro_result"
+  else
+    echo "$line, UNKNOWN" | tee -a "$repro_result"
+  fi
+
   cd "$ORIG_PWD" || exit 1
 done < "$unsafe_tasks"
 
