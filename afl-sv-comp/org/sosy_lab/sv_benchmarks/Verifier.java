@@ -1,19 +1,20 @@
 package org.sosy_lab.sv_benchmarks;
 
 import java.io.*;
-import com.pholser.junit.quickcheck.internal.GeometricDistribution;
-
+import java.io.EOFException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Verifier {
 
   public static InputStream input;
 
-  private static GeometricDistribution geometricDistribution =
-      new GeometricDistribution();
-  private static SourceOfRandomness random = new SourceOfRandomness(new Radom());
-
   public static void assume(boolean condition) {
-    assert false;
+    if (!condition) {
+      throw new RuntimeException("Assume condition failed");
+    }
   }
 
   public static byte nondetByte() throws IOException {
@@ -94,22 +95,85 @@ public class Verifier {
   }
 
   public static String nondetString() throws IOException {
+    StringBuilder outputStr = new StringBuilder();
     int b = input.read();
-    final int MEAN_STRING_LENGTH = 10;
-    if (b < 26) { //generate an invalid utf-8 encoding 10% of the time, i.e., that's 26/256 ≈ 10.2% of the byte range
-
-    } else { //generate a valid utf-8 encoding 90% of the time
-      int stringLength = geometricDistribution.sampleWithMean(MEAN_STRING_LENGTH, random);
+    if (b == -1)
+      throw new EOFException("Not enough bytes available in input stream to read an int");
+    b = b & 0xFF; // Ensure b is treated as an unsigned byte
+    while (b
+        >= 26) { //generate an invalid utf-8 encoding 10% of the time, i.e., that's 25/256 ≈ 10% of the byte range
+      Object[] pair = readUTF8Char();
+      boolean isValid = (boolean) pair[0];
+      if (!isValid)
+        if (outputStr.length() > 0)
+          return outputStr.toString();
+        else
+          return new String((byte[]) pair[1]);
+      outputStr.append(new String((byte[]) pair[1]));
+      b = input.read();
+      if (b == -1)
+        throw new EOFException("Not enough bytes available in input stream to read an int");
     }
-//    geometric distribution with mean of 10
-//     200 million range will represent the end of the string, for invalid encoding.
-    //bitblashing (eager set conversion), choose randomly, and propagate and see the sequences
-//    that can sometimes work for the solvers, but similar to fuzz
-//    other types of solvers algorithm, do not have any random guess and check in their algorithm and so the fuzzer would substitute this
-//    dpll[t], work by having an algorithm for a particular theory and use the dpll for this algorthim,
-//    could look at string theories for the [t] here, and thus the fuzzer can be better.
-    byte[] buf = new byte[10];
-    int read = input.read(buf);
-    return new String(buf, 0, read, java.nio.charset.StandardCharsets.UTF_8);
+    return outputStr.toString();
+  }
+
+  private static Object[] readUTF8Char() throws IOException {
+    byte[] fourBytes = new byte[4];
+    for (int i = 0; i < 4; i++) {
+      int b = input.read();
+      if (b == -1)
+        throw new EOFException("Not enough bytes available in input stream to read an int");
+      fourBytes[i] = (byte) b;
+    }
+
+    ArrayList<byte[]> permutations = new ArrayList<>();
+    permute(fourBytes, 0, permutations);
+    for (byte[] perm : permutations) {
+      if (isValidUTF8(perm)) {
+//        System.out.println("valid UTF-8 permutation found: " + Arrays.toString(perm));
+        return new Object[]{true, perm};
+      }
+    }
+//    System.out.println(
+//        "No valid UTF-8 permutation found, returning original bytes: " + Arrays.toString(
+//            fourBytes));
+    return new Object[]{false,
+        fourBytes}; // Return the original bytes if no valid UTF-8 permutation is found
+  }
+
+  static void permute(byte[] array, int index, ArrayList<byte[]> result) {
+    if (index == array.length - 1) {
+      result.add(array.clone());
+    }
+    for (int i = index; i < array.length; i++) {
+      swap(array, index, i);
+      permute(array, index + 1, result);
+      swap(array, index, i);
+    }
+  }
+
+  static void swap(byte[] array, int i, int j) {
+    byte temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  private static boolean isValidUTF8(byte[] bytes) {
+    if ((bytes[3] & 0x80) == 0) {
+//      System.out.println("case 1 match");
+      return true; // 1-byte UTF-8 character
+    } else if ((bytes[3] & 0xE0) == 0xC0 && (bytes[2] & 0xC0) == 0x80) {
+//      System.out.println("case 2 match");
+      return true; // 2-byte UTF-8 character
+    } else if ((bytes[3] & 0xF0) == 0xE0 && (bytes[2] & 0xC0) == 0x80
+        && (bytes[1] & 0xC0) == 0x80) {
+//      System.out.println("case 3 match");
+      return true; // 3-byte UTF-8 character
+    } else if ((bytes[3] & 0xF8) == 0xF0 && (bytes[2] & 0xC0) == 0x80 && (bytes[1] & 0xC0) == 0x80
+        && (bytes[0] & 0xC0) == 0x80) {
+//      System.out.println("case 4 match");
+      return true; // 4-byte UTF-8 character
+    }
+    return false; // Invalid UTF-8 byte sequence
   }
 }
