@@ -131,7 +131,7 @@ public class MainTest {
   }
 
   /** Initializes an empty string symbol table. */
-  public Main() {}
+  public MainTest() {}
 
   /**
    * Returns the value associated with the given key.
@@ -286,7 +286,7 @@ public class MainTest {
     @Fuzz
     public void mainTest(InputStream input) throws IOException {
     Verifier.input = input;
-    Main st = new Main();
+    MainTest st = new MainTest();
     CharArray test = new CharArray(8);
 
     try {

@@ -45,7 +45,7 @@ public class MainTest {
     a = new int[1];
     int x = -3;
 
-    Main inst = new Main();
+    MainTest inst = new MainTest();
 
     inst.test(x);
   }

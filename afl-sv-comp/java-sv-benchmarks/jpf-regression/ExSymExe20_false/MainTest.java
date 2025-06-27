@@ -49,7 +49,7 @@ public class MainTest {
     x = x % 3; /* we want to specify in an annotation that this
                                 param should be symbolic */
 
-    Main inst = new Main();
+    MainTest inst = new MainTest();
     field = Verifier.nondetInt();
     if (field < 0) return;
     field = field % 9;

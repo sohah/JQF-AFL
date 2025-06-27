@@ -43,7 +43,7 @@ public class MainTest {
     public void mainTest(InputStream input) throws IOException {
     Verifier.input = input;
     float x = Verifier.nondetFloat();
-    Main inst = new Main();
+    MainTest inst = new MainTest();
     inst.test(x);
   }
 

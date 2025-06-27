@@ -212,9 +212,9 @@ public class MainTest {
    * application, which is how source code analysis tools are tested.
    */
     @Fuzz
-    public void mainTest(InputStream input) throws IOException {
+    public void mainTest(InputStream input) throws Throwable {
     Verifier.input = input;
-    Main m = new Main();
+    MainTest m = new MainTest();
     m.bad();
   }
 }

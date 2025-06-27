@@ -44,7 +44,7 @@ public class MainTest {
     Verifier.input = input;
     double x = Verifier.nondetDouble();
 
-    Main inst = new Main();
+    MainTest inst = new MainTest();
     inst.test(x);
   }
 

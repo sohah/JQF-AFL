@@ -46,7 +46,7 @@ public class MainTest {
     Verifier.input = input;
     int x = Verifier.nondetInt();
 
-    Main inst = new Main();
+    MainTest inst = new MainTest();
     field = 9000;
     inst.test(x, field, field2);
     // test(x,x);

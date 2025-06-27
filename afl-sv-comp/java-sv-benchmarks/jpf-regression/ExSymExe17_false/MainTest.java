@@ -45,7 +45,7 @@ public class MainTest {
     int x = 4; /* we want to specify in an annotation that this param should be
                   symbolic */
 
-    Main inst = new Main();
+    MainTest inst = new MainTest();
     field = 0;
     inst.test(x, field);
     // test(x,x);

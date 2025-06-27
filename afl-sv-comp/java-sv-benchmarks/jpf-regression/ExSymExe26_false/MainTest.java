@@ -46,7 +46,7 @@ public class MainTest {
     if (arg < 0) return;
 
     int a = arg % 3;
-    Main inst = new Main();
+    MainTest inst = new MainTest();
     int b = arg % 8;
     inst.test(a, b, a);
   }

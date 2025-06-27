@@ -73,7 +73,7 @@ public class MainTest {
     public void mainTest(InputStream input) throws IOException {
     Verifier.input = input;
 
-    Main ex = new Main();
+    MainTest ex = new MainTest();
 
     ex.test(Verifier.nondetInt(), Verifier.nondetInt());
     // test(0,0);

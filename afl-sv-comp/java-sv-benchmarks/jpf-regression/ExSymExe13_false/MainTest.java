@@ -47,7 +47,7 @@ public class MainTest {
     int x = Verifier.nondetInt();
     if (x > 0) return;
 
-    Main inst = new Main();
+    MainTest inst = new MainTest();
     field = Verifier.nondetInt();
     if (field < 0) return;
     inst.test(x, field, field2);

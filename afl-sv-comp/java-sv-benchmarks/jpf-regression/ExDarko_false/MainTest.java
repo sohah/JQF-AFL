@@ -42,9 +42,9 @@ public class MainTest {
     @Fuzz
     public void mainTest(InputStream input) throws IOException {
     Verifier.input = input;
-    new Main().unboxed(Verifier.nondetInt(), 2);
-    new Main().boxed(Verifier.nondetInt(), 2);
-    new Main().customBoxed(Verifier.nondetInt(), 2);
+    new MainTest().unboxed(Verifier.nondetInt(), 2);
+    new MainTest().boxed(Verifier.nondetInt(), 2);
+    new MainTest().customBoxed(Verifier.nondetInt(), 2);
   }
 
   private void unboxed(int i, int j) {

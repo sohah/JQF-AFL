@@ -48,7 +48,7 @@ public class MainTest {
     int y = Verifier.nondetInt();
     if (y < 0) return;
     y = y % 5 - 5;
-    Main inst = new Main();
+    MainTest inst = new MainTest();
     inst.test(x, y);
   }
 

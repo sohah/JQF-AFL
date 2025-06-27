@@ -45,7 +45,7 @@ public class MainTest {
     @Fuzz
     public void mainTest(InputStream input) throws IOException {
     Verifier.input = input;
-    (new Main()).test(Verifier.nondetInt());
+    (new MainTest()).test(Verifier.nondetInt());
   }
 
   public void test(int arg) {

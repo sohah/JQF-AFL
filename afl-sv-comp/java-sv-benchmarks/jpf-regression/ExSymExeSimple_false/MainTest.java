@@ -54,7 +54,7 @@ public class MainTest {
     public void mainTest(InputStream input) throws IOException {
     Verifier.input = input;
     int arg = Verifier.nondetInt();
-    Main inst = new Main();
+    MainTest inst = new MainTest();
     Node n = new Node();
     n.test(arg, arg);
     // Debug.printPC("PC: ");

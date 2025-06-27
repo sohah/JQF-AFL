@@ -46,7 +46,7 @@ public class MainTest {
     if (arg < 0) return;
     int x = 10 - arg % 9;
     int y = 10 - arg % 5;
-    Main inst = new Main();
+    MainTest inst = new MainTest();
     inst.test(x, y);
   }
 

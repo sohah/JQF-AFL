@@ -47,7 +47,7 @@ public class MainTest {
     int x = -13; /* we want to specify in an annotation that this param should
                     be symbolic */
 
-    Main inst = new Main();
+    MainTest inst = new MainTest();
     field = Verifier.nondetInt();
     if (field < 0) return;
     inst.test(x, field, field2);

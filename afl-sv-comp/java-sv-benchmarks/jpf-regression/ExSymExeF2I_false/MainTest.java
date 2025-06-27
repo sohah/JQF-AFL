@@ -43,7 +43,7 @@ public class MainTest {
     Verifier.input = input;
     float x = 3;
 
-    Main inst = new Main();
+    MainTest inst = new MainTest();
     inst.test(x);
   }
 

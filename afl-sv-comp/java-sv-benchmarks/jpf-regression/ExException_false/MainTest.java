@@ -43,9 +43,9 @@ public class MainTest {
   }
 
   static int test(int secret) {
-    Main o = null;
+    MainTest o = null;
     if (secret > 0) {
-      o = new Main();
+      o = new MainTest();
       assert false;
     }
     int i = o.zero();

@@ -44,7 +44,7 @@ public class MainTest {
     Verifier.input = input;
     float x = Verifier.nondetFloat();
     if (x >= 0.0f) {
-      Main inst = new Main();
+      MainTest inst = new MainTest();
       inst.test(x);
     }
   }

@@ -38,10 +38,11 @@ import org.sosy_lab.sv_benchmarks.Verifier;
 
 @RunWith(JQF.class)
 public class MainTest {
+
     @Fuzz
     public void mainTest(InputStream input) throws IOException {
     Verifier.input = input;
-    (new Main()).f(Verifier.nondetInt(), 0);
+    (new MainTest()).f(Verifier.nondetInt(), 0);
   }
 
   public void f(int a, int b) {

@@ -4,7 +4,7 @@
 #./afl-sv-comp/scripts/alf-svcomp.sh --64 --propertyfile ../../bench-defs/sv-benchmarks/java/properties/assert_java.prp  ../../bench-defs/sv-benchmarks/java/common/ ../../bench-de
  #fs/sv-benchmarks/java/jbmc-regression/boolean1
 
-DURATION=30
+DURATION=60
 
 # parse arguments
 declare -a BM
@@ -72,15 +72,27 @@ mkdir -pv $DIR/target/classes
 #trap "rm -rf $DIR" EXIT
 
 classpath=$(./scripts/classpath.sh)
-echo javac --release 11 -g -cp "$PWD/afl-sv-comp/:$classpath" -d $DIR/target/classes "${BM[@]}" $PWD/afl-sv-comp/org/sosy_lab/sv_benchmarks/Verifier.java
 
-javac --release 11 -g -cp "$PWD/afl-sv-comp/:$classpath" -d $DIR/target/classes "${BM[@]}" $PWD/afl-sv-comp/org/sosy_lab/sv_benchmarks/Verifier.java #>> "$SHELL_LOG"
+if [[ "$parent_dir" == *juliet* ]]; then
+    echo "The variable contains 'juliet'."
+    echo javac --release 11 -g -cp "$PWD/afl-sv-comp/:$classpath" -d $DIR/target/classes "${BM[@]}" $PWD/afl-sv-comp/org/sosy_lab/sv_benchmarks/Verifier.java
+
+    javac --release 11 -g -cp "$PWD/afl-sv-comp/:$classpath":$PWD/../../sv-benchmarks/java/juliet-java/testcasesupport -d $DIR/target/classes "${BM[@]}" $PWD/afl-sv-comp/org/sosy_lab/sv_benchmarks/Verifier.java >> "$SHELL_LOG"
+else
+    echo javac --release 11 -g -cp "$PWD/afl-sv-comp/:$classpath" -d $DIR/target/classes "${BM[@]}" $PWD/afl-sv-comp/org/sosy_lab/sv_benchmarks/Verifier.java
+
+    javac --release 11 -g -cp "$PWD/afl-sv-comp/:$classpath" -d $DIR/target/classes "${BM[@]}" $PWD/afl-sv-comp/org/sosy_lab/sv_benchmarks/Verifier.java >> "$SHELL_LOG"
+fi
+
+
+
 
 export AFL_DIR=$PWD/afl
+cp -r "$AFL_DIR/testcases/random"  "$DIR/random"
 
 echo "running afl-now ...."
 
-cd $DIR && timeout "$DURATION" $AFL_DIR/../bin/jqf-afl-fuzz -v -c "$DIR"/target/classes:"$AFL_DIR"/../afl-sv-comp/ -i "$AFL_DIR"/testcases/random/ MainTest mainTest >> "$SHELL_LOG"
+cd $DIR && timeout "$DURATION" $AFL_DIR/../bin/jqf-afl-fuzz -v -c "$DIR"/target/classes:"$AFL_DIR"/../afl-sv-comp/ -i "$DIR"/random/ MainTest mainTest >> "$SHELL_LOG"
 
 grep "java.lang.AssertionError" "$DIR"/jqf.log> /dev/null
 if [ $? -eq 0 ]; then

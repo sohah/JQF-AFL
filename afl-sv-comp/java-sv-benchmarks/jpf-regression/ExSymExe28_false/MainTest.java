@@ -44,7 +44,7 @@ public class MainTest {
     Verifier.input = input;
     int x = Verifier.nondetInt();
     int y = Verifier.nondetInt();
-    Main inst = new Main();
+    MainTest inst = new MainTest();
     inst.test(x, y, 9);
   }
 

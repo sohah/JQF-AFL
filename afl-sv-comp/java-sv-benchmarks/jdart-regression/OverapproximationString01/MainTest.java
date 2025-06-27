@@ -30,8 +30,8 @@ public class MainTest {
     @Fuzz
     public void mainTest(InputStream input) throws IOException {
     Verifier.input = input;
-    Main c = new Main();
-    String input = Verifier.nondetString();
-    c.foo(input);
+    MainTest c = new MainTest();
+    String input1 = Verifier.nondetString();
+    c.foo(input1);
   }
 }

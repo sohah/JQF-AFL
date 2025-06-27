@@ -45,7 +45,7 @@ public class MainTest {
     int x = Verifier.nondetInt();
     if (x < 0) return;
     int y = 5;
-    Main inst = new Main();
+    MainTest inst = new MainTest();
     assert inst.test(x, y) == 2;
   }
 
