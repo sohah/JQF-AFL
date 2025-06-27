@@ -11,9 +11,9 @@ public class Verifier {
 
   public static InputStream input;
 
-  public static void assume(boolean condition) {
+  public static void assume(boolean condition) throws EOFException {
     if (!condition) {
-      throw new RuntimeException("Assume condition failed");
+      throw new EOFException("Assume condition failed");
     }
   }
 

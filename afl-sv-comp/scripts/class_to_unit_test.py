@@ -37,7 +37,7 @@ def transform_java_class(input_file, new_name):
 
         # Insert imports at the top (only once)
         if not imports_inserted and (
-                stripped.startswith("package ") or stripped.startswith("import ") or stripped == ""):
+            stripped.startswith("package ") or stripped.startswith("import ") or stripped == ""):
             transformed_lines.append(line)
             continue
         elif not imports_inserted:
@@ -57,10 +57,15 @@ def transform_java_class(input_file, new_name):
 
         # Transform the main method signature
         if re.match(r"public\s+static\s+void\s+main\s*\(\s*String\s+\w+\[\]\s*\)\s*\{", stripped) or \
-                re.match(r"public\s+static\s+void\s+main\s*\(\s*String\s*\[\]\s+\w+\s*\)\s*\{?", stripped):
+            re.match(r"public\s+static\s+void\s+main\s*\(\s*String\s*\[\]\s+\w+\s*\)\s*\{?", stripped):
             transformed_lines.append("    @Fuzz\n")
             line = "    public void mainTest(InputStream input) throws IOException {\n"
             inside_main = True
+
+        if(re.match( r'^(\s*)Main\s+(\w+)\s*=\s*new\s+Main\(\);', stripped)):
+            pattern = r'^(\s*)Main\s+(\w+)\s*=\s*new\s+Main\(\);'
+            replacement = r'\1MainTest \2 = new MainTest();'
+            line = re.sub(pattern, replacement, line)
 
         transformed_lines.append(line)
 
