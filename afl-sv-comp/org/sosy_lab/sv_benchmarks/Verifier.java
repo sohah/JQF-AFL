@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.nio.charset.StandardCharsets;
 
 public class Verifier {
 
@@ -100,18 +101,14 @@ public class Verifier {
     if (b == -1)
       throw new EOFException("Not enough bytes available in input stream to read an int");
     b = b & 0xFF; // Ensure b is treated as an unsigned byte
-    int size = -1;
-    while (b
-        >= 26 && size < 200) { //generate an invalid utf-8 encoding 10% of the time, i.e., that's 25/256 ≈ 10% of the byte range
+    int size = 0;
+    while (b >= 26 && size
+        < 200) { //generate an invalid utf-8 encoding 10% of the time, i.e., that's 25/256 ≈ 10% of the byte range
       System.out.println("size so far = " + ++size);
-      Object[] pair = readUTF8Char();
-      boolean isValid = (boolean) pair[0];
-      if (!isValid)
-        if (outputStr.length() > 0)
-          return outputStr.toString();
-        else
-          return new String((byte[]) pair[1]);
-      outputStr.append(new String((byte[]) pair[1]));
+      byte[] utf8Char = readUTF8Char();
+      System.out.println("outputStr before append = " + outputStr);
+      outputStr.append(new String(utf8Char, StandardCharsets.UTF_8));
+      System.out.println("outputStr after append = " + outputStr);
       b = input.read();
       if (b == -1)
         throw new EOFException("Not enough bytes available in input stream to read an int");
@@ -119,63 +116,42 @@ public class Verifier {
     return outputStr.toString();
   }
 
-  private static Object[] readUTF8Char() throws IOException {
+
+  private static byte[] readUTF8Char() throws IOException {
     byte[] fourBytes = new byte[4];
-    for (int i = 0; i < 4; i++) {
-      int b = input.read();
-      if (b == -1)
-        throw new EOFException("Not enough bytes available in input stream to read an int");
-      fourBytes[i] = (byte) b;
-    }
-
-    ArrayList<byte[]> permutations = new ArrayList<>();
-    permute(fourBytes, 0, permutations);
-    for (byte[] perm : permutations) {
-      if (isValidUTF8(perm)) {
-//        System.out.println("valid UTF-8 permutation found: " + Arrays.toString(perm));
-        return new Object[]{true, perm};
+    int numBytesRead = 0;
+    do {
+      while (numBytesRead < 4) {
+        int b = input.read();
+        if (b == -1)
+          throw new EOFException("Not enough bytes available in input stream to read an int");
+        fourBytes[numBytesRead++] = (byte) b;
       }
-    }
-//    System.out.println(
-//        "No valid UTF-8 permutation found, returning original bytes: " + Arrays.toString(
-//            fourBytes));
-    return new Object[]{false,
-        fourBytes}; // Return the original bytes if no valid UTF-8 permutation is found
+      byte[] validUTF8 = prefixOfUTF8(fourBytes);
+      if (validUTF8!=null)
+        return validUTF8;
+      else {
+        fourBytes[0] = fourBytes[1];
+        fourBytes[1] = fourBytes[2];
+        fourBytes[2] = fourBytes[3];
+        fourBytes[3] = 0;
+        numBytesRead--;
+      }
+    } while (true);
   }
 
-  static void permute(byte[] array, int index, ArrayList<byte[]> result) {
-    if (index == array.length - 1) {
-      result.add(array.clone());
+  private static byte[] prefixOfUTF8(byte[] bytes) {
+    if ((bytes[0] & 0x80) == 0) {
+      return new byte[]{bytes[0]}; // 1-byte UTF-8 character
+    } else if ((bytes[0] & 0xE0) == 0xC0 && (bytes[1] & 0xC0) == 0x80) {
+      return new byte[]{bytes[0], bytes[1]}; // 2-byte UTF-8 character
+    } else if ((bytes[0] & 0xF0) == 0xE0 && (bytes[1] & 0xC0) == 0x80
+        && (bytes[2] & 0xC0) == 0x80) {
+      return new byte[]{bytes[0], bytes[1], bytes[0]}; // 3-byte UTF-8 character
+    } else if ((bytes[0] & 0xF8) == 0xF0 && (bytes[1] & 0xC0) == 0x80 && (bytes[2] & 0xC0) == 0x80
+        && (bytes[3] & 0xC0) == 0x80) {
+      return new byte[]{bytes[0],bytes[1],bytes[2],bytes[3]}; // 4-byte UTF-8 character
     }
-    for (int i = index; i < array.length; i++) {
-      swap(array, index, i);
-      permute(array, index + 1, result);
-      swap(array, index, i);
-    }
-  }
-
-  static void swap(byte[] array, int i, int j) {
-    byte temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-
-  private static boolean isValidUTF8(byte[] bytes) {
-    if ((bytes[3] & 0x80) == 0) {
-//      System.out.println("case 1 match");
-      return true; // 1-byte UTF-8 character
-    } else if ((bytes[3] & 0xE0) == 0xC0 && (bytes[2] & 0xC0) == 0x80) {
-//      System.out.println("case 2 match");
-      return true; // 2-byte UTF-8 character
-    } else if ((bytes[3] & 0xF0) == 0xE0 && (bytes[2] & 0xC0) == 0x80
-        && (bytes[1] & 0xC0) == 0x80) {
-//      System.out.println("case 3 match");
-      return true; // 3-byte UTF-8 character
-    } else if ((bytes[3] & 0xF8) == 0xF0 && (bytes[2] & 0xC0) == 0x80 && (bytes[1] & 0xC0) == 0x80
-        && (bytes[0] & 0xC0) == 0x80) {
-//      System.out.println("case 4 match");
-      return true; // 4-byte UTF-8 character
-    }
-    return false; // Invalid UTF-8 byte sequence
+    return null; // Invalid UTF-8 byte sequence
   }
 }

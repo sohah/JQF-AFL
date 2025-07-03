@@ -29,11 +29,11 @@ public class MainTest {
     randomSequenceOfActions(3);
   }
 
-  public static boolean getBoolean() {
+  public static boolean getBoolean() throws IOException {
     return Verifier.nondetBoolean();
   }
 
-  public static void randomSequenceOfActions(int maxLength) {
+  public static void randomSequenceOfActions(int maxLength) throws IOException {
     Actions a = new Actions();
 
     int counter = 0;

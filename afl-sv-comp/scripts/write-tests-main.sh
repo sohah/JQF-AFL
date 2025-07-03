@@ -25,6 +25,12 @@ while read -r line; do
   echo "PWD=$PWD"
   TEST_FILE_PATH=$(python3 "$PWD"/afl-sv-comp/scripts/class_to_unit_test.py "$maintTest")
 
+#  need to add code here to handle the case where the MinePump needs to add an IOException to
+# some of its methods. More precisely, i should check if the filename contains a minepump then we
+# should these two replacements to MainTest.java,
+# sed -i 's/public static void randomSequenceOfActions(int maxLength) {/public static void randomSequenceOfActions(int maxLength) throws IOException {/' ./*/MainTest.java
+# sed -i 's/public static boolean getBoolean() {/public static boolean getBoolean() throws IOException {/' ./*/MainTest.java
+# so far I have found it easier to just change them from the terminal than to change the script and run the script
   echo TEST_FILE_PATH="$TEST_FILE_PATH"
 done < "$unsafe_tasks"
 
