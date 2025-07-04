@@ -26,17 +26,24 @@ public class Verifier {
   }
 
   public static char nondetChar() throws IOException {
-    int b = input.read();
-    if (b == -1)
-      throw new EOFException("Not enough bytes available in input stream to read an int");
-    return (char) b;
+    int b1 = input.read();
+    int b2 = input.read();
+
+    if (b1 == -1 || b2 == -1) {
+      throw new EOFException("Not enough bytes to read a char");
+    }
+    char c = (char) ((b1 << 8) | (b2 & 0xFF));
+    System.out.println("Generated char: " + c);
+    return c;
   }
 
   public static boolean nondetBoolean() throws IOException {
     int b = input.read();
     if (b == -1)
       throw new EOFException("Not enough bytes available in input stream to read an int");
-    return (b & 1) == 1;
+    boolean outputBoolean = (b & 1) == 1;
+    System.out.println("Generated boolean: " + outputBoolean);
+    return outputBoolean;
   }
 
   public static short nondetShort() throws IOException {
@@ -47,6 +54,7 @@ public class Verifier {
         throw new EOFException("Not enough bytes available in input stream to read an int");
       i = (i << 8) | b;
     }
+    System.out.println("Generated short: " + i);
     return (short) i;
   }
 
@@ -59,6 +67,7 @@ public class Verifier {
         throw new EOFException("Not enough bytes available in input stream to read an int");
       i = (i << 8) | b;
     }
+    System.out.println("Generated int: " + i);
     return i;
   }
 
@@ -70,6 +79,7 @@ public class Verifier {
         throw new EOFException("Not enough bytes available in input stream to read an int");
       l = (l << 8) | (b & 0xFF);
     }
+    System.out.println("Generated long: " + l);
     return l;
   }
 
@@ -81,7 +91,9 @@ public class Verifier {
         throw new EOFException("Not enough bytes available in input stream to read an int");
       bits = (bits << 8) | (b & 0xFF);
     }
-    return Float.intBitsToFloat(bits);
+    float outputFloat = Float.intBitsToFloat(bits);
+    System.out.println("Generated float: " + outputFloat);
+    return outputFloat;
   }
 
   public static double nondetDouble() throws IOException {
@@ -92,7 +104,9 @@ public class Verifier {
         throw new EOFException("Not enough bytes available in input stream to read an int");
       bits = (bits << 8) | (b & 0xFF);
     }
-    return Double.longBitsToDouble(bits);
+    double outputDouble = Double.longBitsToDouble(bits);
+    System.out.println("Generated double: " + outputDouble);
+    return outputDouble;
   }
 
   public static String nondetString() throws IOException {
@@ -104,15 +118,13 @@ public class Verifier {
     int size = 0;
     while (b >= 26 && size
         < 200) { //generate an invalid utf-8 encoding 10% of the time, i.e., that's 25/256 ≈ 10% of the byte range
-      System.out.println("size so far = " + ++size);
       byte[] utf8Char = readUTF8Char();
-      System.out.println("outputStr before append = " + outputStr);
       outputStr.append(new String(utf8Char, StandardCharsets.UTF_8));
-      System.out.println("outputStr after append = " + outputStr);
       b = input.read();
       if (b == -1)
         throw new EOFException("Not enough bytes available in input stream to read an int");
     }
+    System.out.println("Final nondetString = " + outputStr);
     return outputStr.toString();
   }
 
@@ -147,7 +159,7 @@ public class Verifier {
       return new byte[]{bytes[0], bytes[1]}; // 2-byte UTF-8 character
     } else if ((bytes[0] & 0xF0) == 0xE0 && (bytes[1] & 0xC0) == 0x80
         && (bytes[2] & 0xC0) == 0x80) {
-      return new byte[]{bytes[0], bytes[1], bytes[0]}; // 3-byte UTF-8 character
+      return new byte[]{bytes[0], bytes[1], bytes[2]}; // 3-byte UTF-8 character
     } else if ((bytes[0] & 0xF8) == 0xF0 && (bytes[1] & 0xC0) == 0x80 && (bytes[2] & 0xC0) == 0x80
         && (bytes[3] & 0xC0) == 0x80) {
       return new byte[]{bytes[0],bytes[1],bytes[2],bytes[3]}; // 4-byte UTF-8 character
