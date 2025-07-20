@@ -91,5 +91,5 @@ if __name__ == "__main__":
 
     input_file = sys.argv[1]
     new_class_name = "MainTest"
-    # print("\nprinting inputs:\n","input_file=",input_file, "\nnew_class_name=",new_class_name)
+    print("\nprinting inputs:\n","input_file=",input_file, "\nnew_class_name=",new_class_name)
     transform_java_class(input_file, new_class_name)

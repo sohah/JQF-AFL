@@ -11,7 +11,7 @@ FIND_OPTIONS="-name 'Main.java'"
 
 PWD=$(pwd)
 unsafe_tasks=$PWD/afl-sv-comp/sv-comp-false.txt;
-while read -r line; do
+while IFS= read -r line || [[ -n "$line" ]]; do
   benchmark_yml="${line##*/}"        # Get 'coral22.yml'
   benchmark="${benchmark_yml%.yml}"       # Remove '.yml'
   dirname=$(echo "$line" | cut -d'/' -f1)

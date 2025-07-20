@@ -40,6 +40,10 @@ import java.io.OutputStream;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.time.Instant;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.function.Consumer;
@@ -283,8 +287,22 @@ public class AFLGuidance implements Guidance {
             case FAILURE: {
                 // For failure, the exit value is non-zero in LSB to
                 // simulate exit with signal
-                status = 6; // SIGABRT
-                break;
+                if(error.toString().contains("AssertionError")) {
+                    long currentTime = new Date().getTime();
+
+                    LocalTime time = Instant.ofEpochMilli(currentTime)
+                        .atZone(ZoneId.systemDefault())
+                        .toLocalTime();
+
+                    String formattedTime = time.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+
+                    // If the error is an assertion failure, we want to stop the fuzzing early, useful for sv-comp experiments
+//                    System.out.println("Stopping fuzzing due to assertion failure at formattedTime= " +formattedTime);
+//                    System.out.println(error.toString());
+                    throw new GuidanceException("Stopping fuzzing due to assertion failure at " + formattedTime, error);
+                }
+                    status = 6; // SIGABRT
+                    break;
             }
             case INVALID: {
                 // For invalid inputs, we send a non-zero return status

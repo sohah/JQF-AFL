@@ -4,7 +4,7 @@
 #./afl-sv-comp/scripts/alf-svcomp.sh --64 --propertyfile ../../bench-defs/sv-benchmarks/java/properties/assert_java.prp  ../../bench-defs/sv-benchmarks/java/common/ ../../bench-de
  #fs/sv-benchmarks/java/jbmc-regression/boolean1
 
-DURATION=60
+DURATION=850
 
 # parse arguments
 declare -a BM
