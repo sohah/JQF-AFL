@@ -1,412 +1,421 @@
-algorithms/BellmanFord-FunSat02.yml
-algorithms/BellmanFord-FunUnsat01.yml
-algorithms/BellmanFord-FunUnsat02.yml
-algorithms/BellmanFord-MemUnsat01.yml
-algorithms/BellmanFord-MemUnsat02.yml
-algorithms/BinaryTreeSearch-FunUnsat01.yml
-algorithms/BinaryTreeSearch-MemUnsat01.yml
-algorithms/BinaryTreeSearch-MemUnsat02.yml
-algorithms/InsertionSort-FunUnsat01.yml
-algorithms/InsertionSort-MemUnsat01.yml
-algorithms/MergeSortIterative-FunUnsat01.yml
-algorithms/MergeSortIterative-MemSat01.yml
-algorithms/MergeSortIterative-MemUnsat01.yml
-algorithms/RedBlackTree-FunUnsat01.yml
-algorithms/RedBlackTree-MemUnsat01.yml
-algorithms/SortedListInsert-FunUnsat01.yml
-algorithms/SortedListInsert-MemUnsat01.yml
-algorithms/Trie-FunUnsat01.yml
-algorithms/Trie-MemUnsat01.yml
-algorithms/Tsp-FunSat01.yml
-algorithms/Tsp-FunUnsat01.yml
-algorithms/Tsp-MemUnsat01.yml
-float-nonlinear-calculation/coral10.yml
-float-nonlinear-calculation/coral11.yml
-float-nonlinear-calculation/coral12.yml
-float-nonlinear-calculation/coral13.yml
-float-nonlinear-calculation/coral14.yml
-float-nonlinear-calculation/coral15.yml
-float-nonlinear-calculation/coral16.yml
-float-nonlinear-calculation/coral17.yml
-float-nonlinear-calculation/coral18.yml
-float-nonlinear-calculation/coral19.yml
-float-nonlinear-calculation/coral1.yml
-float-nonlinear-calculation/coral20.yml
-float-nonlinear-calculation/coral21.yml
-float-nonlinear-calculation/coral22.yml
-float-nonlinear-calculation/coral27.yml
-float-nonlinear-calculation/coral28.yml
-float-nonlinear-calculation/coral29.yml
-float-nonlinear-calculation/coral2.yml
-float-nonlinear-calculation/coral30.yml
-float-nonlinear-calculation/coral31.yml
-float-nonlinear-calculation/coral32.yml
-float-nonlinear-calculation/coral33.yml
-float-nonlinear-calculation/coral34.yml
-float-nonlinear-calculation/coral35.yml
-float-nonlinear-calculation/coral36.yml
-float-nonlinear-calculation/coral38.yml
-float-nonlinear-calculation/coral39.yml
-float-nonlinear-calculation/coral40.yml
-float-nonlinear-calculation/coral41.yml
-float-nonlinear-calculation/coral42.yml
-float-nonlinear-calculation/coral43.yml
-float-nonlinear-calculation/coral44.yml
-float-nonlinear-calculation/coral45.yml
-float-nonlinear-calculation/coral48.yml
-float-nonlinear-calculation/coral49.yml
-float-nonlinear-calculation/coral4.yml
-float-nonlinear-calculation/coral50.yml
-float-nonlinear-calculation/coral51.yml
-float-nonlinear-calculation/coral52.yml
-float-nonlinear-calculation/coral53.yml
-float-nonlinear-calculation/coral54.yml
-float-nonlinear-calculation/coral56.yml
-float-nonlinear-calculation/coral57.yml
-float-nonlinear-calculation/coral58.yml
-float-nonlinear-calculation/coral59.yml
-float-nonlinear-calculation/coral60.yml
-float-nonlinear-calculation/coral61.yml
-float-nonlinear-calculation/coral62.yml
-float-nonlinear-calculation/coral63.yml
-float-nonlinear-calculation/coral64.yml
-float-nonlinear-calculation/coral65.yml
-float-nonlinear-calculation/coral66.yml
-float-nonlinear-calculation/coral67.yml
-float-nonlinear-calculation/coral68.yml
-float-nonlinear-calculation/coral69.yml
-float-nonlinear-calculation/coral6.yml
-float-nonlinear-calculation/coral71.yml
-float-nonlinear-calculation/coral72.yml
-float-nonlinear-calculation/coral73.yml
-float-nonlinear-calculation/coral74.yml
-float-nonlinear-calculation/coral75.yml
-float-nonlinear-calculation/coral76.yml
-float-nonlinear-calculation/coral77.yml
-float-nonlinear-calculation/coral81.yml
-float-nonlinear-calculation/coral84.yml
-float-nonlinear-calculation/coral9.yml
-float-nonlinear-calculation/EulerMethod.yml
-float-nonlinear-calculation/MathSin.yml
-float-nonlinear-calculation/Optimization1.yml
-float-nonlinear-calculation/Optimization2.yml
-float-nonlinear-calculation/Optimization3.yml
-float-nonlinear-calculation/Optimization4.yml
-float-nonlinear-calculation/Optimization5.yml
-float-nonlinear-calculation/Optimization6.yml
-java-ranger-regression/LoopCharAt.yml
-java-ranger-regression/TCAS_prop1.yml
-jayhorn-recursive/Ackermann01.yml
-jayhorn-recursive/InfiniteLoop.yml
-jayhorn-recursive/UnsatAckermann01.yml
-jayhorn-recursive/UnsatAddition01.yml
-jayhorn-recursive/UnsatAddition02.yml
-jayhorn-recursive/UnsatEvenOdd01.yml
-jayhorn-recursive/UnsatFibonacci01.yml
-jayhorn-recursive/UnsatFibonacci02.yml
-jayhorn-recursive/UnsatMccarthy91.yml
-jbmc-regression/ArithmeticException1.yml
-jbmc-regression/ArithmeticException6.yml
-jbmc-regression/ArrayIndexOutOfBoundsException1.yml
-jbmc-regression/ArrayIndexOutOfBoundsException2.yml
-jbmc-regression/ArrayIndexOutOfBoundsException3.yml
-jbmc-regression/assert2.yml
-jbmc-regression/assert3.yml
-jbmc-regression/assert4.yml
-jbmc-regression/athrow1.yml
-jbmc-regression/BufferedReaderReadLine.yml
-jbmc-regression/bug-test-gen-095.yml
-jbmc-regression/CharSequenceBug.yml
-jbmc-regression/ClassCastException1.yml
-jbmc-regression/ClassCastException3.yml
-jbmc-regression/exceptions10.yml
-jbmc-regression/exceptions11.yml
-jbmc-regression/exceptions12.yml
-jbmc-regression/exceptions13.yml
-jbmc-regression/exceptions16.yml
-jbmc-regression/exceptions1.yml
-jbmc-regression/exceptions2.yml
-jbmc-regression/exceptions3.yml
-jbmc-regression/exceptions6.yml
-jbmc-regression/exceptions7.yml
-jbmc-regression/exceptions8.yml
-jbmc-regression/interface1.yml
-jbmc-regression/java_append_char.yml
-jbmc-regression/NegativeArraySizeException1.yml
-jbmc-regression/NegativeArraySizeException2.yml
-jbmc-regression/NullPointerException2.yml
-jbmc-regression/NullPointerException3.yml
-jbmc-regression/NullPointerException4.yml
-jbmc-regression/RegexMatches02.yml
-jbmc-regression/RegexSubstitution02.yml
-jbmc-regression/return1.yml
-jbmc-regression/return2.yml
-jbmc-regression/StaticCharMethods02.yml
-jbmc-regression/StaticCharMethods03.yml
-jbmc-regression/StaticCharMethods04.yml
-jbmc-regression/StaticCharMethods05.yml
-jbmc-regression/StringBuilderAppend02.yml
-jbmc-regression/StringBuilderCapLen02.yml
-jbmc-regression/StringBuilderCapLen03.yml
-jbmc-regression/StringBuilderCapLen04.yml
-jbmc-regression/StringBuilderChars02.yml
-jbmc-regression/StringBuilderChars03.yml
-jbmc-regression/StringBuilderChars04.yml
-jbmc-regression/StringBuilderChars05.yml
-jbmc-regression/StringBuilderChars06.yml
-jbmc-regression/StringBuilderConstructors02.yml
-jbmc-regression/StringBuilderInsertDelete02.yml
-jbmc-regression/StringBuilderInsertDelete03.yml
-jbmc-regression/StringCompare02.yml
-jbmc-regression/StringCompare03.yml
-jbmc-regression/StringCompare04.yml
-jbmc-regression/StringCompare05.yml
-jbmc-regression/StringConcatenation02.yml
-jbmc-regression/StringConcatenation03.yml
-jbmc-regression/StringConcatenation04.yml
-jbmc-regression/StringConstructors02.yml
-jbmc-regression/StringConstructors03.yml
-jbmc-regression/StringConstructors04.yml
-jbmc-regression/StringConstructors05.yml
-jbmc-regression/StringContains01.yml
-jbmc-regression/StringContains02.yml
-jbmc-regression/StringIndexMethods02.yml
-jbmc-regression/StringIndexMethods03.yml
-jbmc-regression/StringIndexMethods04.yml
-jbmc-regression/StringIndexMethods05.yml
-jbmc-regression/StringMiscellaneous02.yml
-jbmc-regression/StringMiscellaneous03.yml
-jbmc-regression/StringStartEnd02.yml
-jbmc-regression/StringStartEnd03.yml
-jbmc-regression/StringValueOf02.yml
-jbmc-regression/StringValueOf03.yml
-jbmc-regression/StringValueOf04.yml
-jbmc-regression/StringValueOf05.yml
-jbmc-regression/StringValueOf06.yml
-jbmc-regression/StringValueOf07.yml
-jbmc-regression/StringValueOf08.yml
-jbmc-regression/StringValueOf09.yml
-jbmc-regression/StringValueOf10.yml
-jbmc-regression/SubString02.yml
-jbmc-regression/SubString03.yml
-jbmc-regression/TokenTest02.yml
-jbmc-regression/Validate02.yml
-jbmc-regression/virtual2.yml
-jdart-regression/addition01.yml
-jdart-regression/array-iteration01.yml
-jdart-regression/boundcheck100.yml
-jdart-regression/boundcheck200.yml
-jdart-regression/boundcheck30.yml
-jdart-regression/double2long.yml
-jdart-regression/float.yml
-jdart-regression/OverapproximationString01.yml
-jdart-regression/radians.yml
-jdart-regression/shifting2.yml
-jdart-regression/shifting3.yml
-jdart-regression/shifting.yml
-jdart-regression/URLDecoder02.yml
-jpf-regression/ExDarko_false.yml
-jpf-regression/ExException_false.yml
-jpf-regression/ExGenSymExe_false.yml
-jpf-regression/ExLazy_false.yml
-jpf-regression/ExMIT_false.yml
-jpf-regression/ExSymExe10_false.yml
-jpf-regression/ExSymExe11_false.yml
-jpf-regression/ExSymExe12_false.yml
-jpf-regression/ExSymExe13_false.yml
-jpf-regression/ExSymExe14_false.yml
-jpf-regression/ExSymExe15_false.yml
-jpf-regression/ExSymExe16_false.yml
-jpf-regression/ExSymExe17_false.yml
-jpf-regression/ExSymExe18_false.yml
-jpf-regression/ExSymExe19_false.yml
-jpf-regression/ExSymExe1_false.yml
-jpf-regression/ExSymExe20_false.yml
-jpf-regression/ExSymExe21_false.yml
-jpf-regression/ExSymExe25_false.yml
-jpf-regression/ExSymExe26_false.yml
-jpf-regression/ExSymExe27_false.yml
-jpf-regression/ExSymExe28_false.yml
-jpf-regression/ExSymExe29_false.yml
-jpf-regression/ExSymExe2_false.yml
-jpf-regression/ExSymExe3_false.yml
-jpf-regression/ExSymExe4_false.yml
-jpf-regression/ExSymExe5_false.yml
-jpf-regression/ExSymExe6_false.yml
-jpf-regression/ExSymExe7_false.yml
-jpf-regression/ExSymExe8_false.yml
-jpf-regression/ExSymExe9_false.yml
-jpf-regression/ExSymExeArrays_false.yml
-jpf-regression/ExSymExeBool_false.yml
-jpf-regression/ExSymExeComplexMath_false.yml
-jpf-regression/ExSymExeD2I_false.yml
-jpf-regression/ExSymExeD2L_false.yml
-jpf-regression/ExSymExeF2I_false.yml
-jpf-regression/ExSymExeF2L_false.yml
-jpf-regression/ExSymExe_false.yml
-jpf-regression/ExSymExeFNEG_false.yml
-jpf-regression/ExSymExeGetStatic_false.yml
-jpf-regression/ExSymExeI2D_false.yml
-jpf-regression/ExSymExeI2F_false.yml
-jpf-regression/ExSymExeLCMP_false.yml
-jpf-regression/ExSymExeLongBytecodes_false.yml
-jpf-regression/ExSymExeResearch_false.yml
-jpf-regression/ExSymExeSimple_false.yml
-jpf-regression/ExSymExeSuzette_false.yml
-jpf-regression/ExSymExeSwitch_false.yml
-jpf-regression/ExSymExeTestAssignments_false.yml
-jpf-regression/ExSymExeTestClassFields_false.yml
-jpf-regression/TestLazy_false.yml
-juliet-java/CWE369_Divide_by_Zero__float_connect_tcp_divide_01_bad_version2.yml
-juliet-java/CWE369_Divide_by_Zero__float_connect_tcp_divide_01_bad.yml
-juliet-java/CWE369_Divide_by_Zero__float_connect_tcp_divide_81a_bad_version2.yml
-juliet-java/CWE369_Divide_by_Zero__float_connect_tcp_divide_81a_bad.yml
-juliet-java/CWE369_Divide_by_Zero__float_console_readLine_divide_54_bad_version2.yml
-juliet-java/CWE369_Divide_by_Zero__float_console_readLine_divide_54_bad.yml
-MinePump/spec1-5_product10.yml
-MinePump/spec1-5_product11.yml
-MinePump/spec1-5_product12.yml
-MinePump/spec1-5_product13.yml
-MinePump/spec1-5_product14.yml
-MinePump/spec1-5_product15.yml
-MinePump/spec1-5_product16.yml
-MinePump/spec1-5_product17.yml
-MinePump/spec1-5_product18.yml
-MinePump/spec1-5_product19.yml
-MinePump/spec1-5_product1.yml
-MinePump/spec1-5_product20.yml
-MinePump/spec1-5_product21.yml
-MinePump/spec1-5_product22.yml
-MinePump/spec1-5_product23.yml
-MinePump/spec1-5_product24.yml
-MinePump/spec1-5_product25.yml
-MinePump/spec1-5_product26.yml
-MinePump/spec1-5_product27.yml
-MinePump/spec1-5_product28.yml
-MinePump/spec1-5_product29.yml
-MinePump/spec1-5_product2.yml
-MinePump/spec1-5_product30.yml
-MinePump/spec1-5_product31.yml
-MinePump/spec1-5_product32.yml
-MinePump/spec1-5_product33.yml
-MinePump/spec1-5_product34.yml
-MinePump/spec1-5_product35.yml
-MinePump/spec1-5_product36.yml
-MinePump/spec1-5_product37.yml
-MinePump/spec1-5_product38.yml
-MinePump/spec1-5_product39.yml
-MinePump/spec1-5_product3.yml
-MinePump/spec1-5_product40.yml
-MinePump/spec1-5_product41.yml
-MinePump/spec1-5_product42.yml
-MinePump/spec1-5_product43.yml
-MinePump/spec1-5_product44.yml
-MinePump/spec1-5_product45.yml
-MinePump/spec1-5_product46.yml
-MinePump/spec1-5_product47.yml
-MinePump/spec1-5_product48.yml
-MinePump/spec1-5_product49.yml
-MinePump/spec1-5_product4.yml
-MinePump/spec1-5_product50.yml
-MinePump/spec1-5_product51.yml
-MinePump/spec1-5_product52.yml
-MinePump/spec1-5_product53.yml
-MinePump/spec1-5_product54.yml
-MinePump/spec1-5_product55.yml
-MinePump/spec1-5_product56.yml
-MinePump/spec1-5_product5.yml
-MinePump/spec1-5_product6.yml
-MinePump/spec1-5_product7.yml
-MinePump/spec1-5_product8.yml
-MinePump/spec1-5_product9.yml
-securibench/Aliasing1.yml
-securibench/Aliasing4.yml
-securibench/Aliasing5.yml
-securibench/Aliasing6.yml
-securibench/Arrays10.yml
-securibench/Arrays1.yml
-securibench/Arrays2.yml
-securibench/Arrays3.yml
-securibench/Arrays4.yml
-securibench/Arrays6.yml
-securibench/Arrays7.yml
-securibench/Arrays8.yml
-securibench/Arrays9.yml
-securibench/Basic10.yml
-securibench/Basic11.yml
-securibench/Basic12.yml
-securibench/Basic15.yml
-securibench/Basic16.yml
-securibench/Basic17.yml
-securibench/Basic18.yml
-securibench/Basic19.yml
-securibench/Basic1.yml
-securibench/Basic20.yml
-securibench/Basic21.yml
-securibench/Basic24.yml
-securibench/Basic25.yml
-securibench/Basic26.yml
-securibench/Basic27.yml
-securibench/Basic29.yml
-securibench/Basic2.yml
-securibench/Basic30.yml
-securibench/Basic31.yml
-securibench/Basic32.yml
-securibench/Basic33.yml
-securibench/Basic34.yml
-securibench/Basic35.yml
-securibench/Basic37.yml
-securibench/Basic38.yml
-securibench/Basic39.yml
-securibench/Basic3.yml
-securibench/Basic4.yml
-securibench/Basic5.yml
-securibench/Basic7.yml
-securibench/Basic9.yml
-securibench/Collections10.yml
-securibench/Collections12.yml
-securibench/Collections13.yml
-securibench/Collections14.yml
-securibench/Collections1.yml
-securibench/Collections2.yml
-securibench/Collections3.yml
-securibench/Collections4.yml
-securibench/Collections5.yml
-securibench/Collections6.yml
-securibench/Collections7.yml
-securibench/Datastructures1.yml
-securibench/Datastructures2.yml
-securibench/Datastructures3.yml
-securibench/Datastructures5.yml
-securibench/Datastructures6.yml
-securibench/Factories1.yml
-securibench/Factories2.yml
-securibench/Factories3.yml
-securibench/Inter10.yml
-securibench/Inter11.yml
-securibench/Inter12.yml
-securibench/Inter13.yml
-securibench/Inter14.yml
-securibench/Inter1.yml
-securibench/Inter2.yml
-securibench/Inter3.yml
-securibench/Inter4.yml
-securibench/Inter5.yml
-securibench/Inter6.yml
-securibench/Inter7.yml
-securibench/Inter8.yml
-securibench/Inter9.yml
-securibench/Pred2.yml
-securibench/Pred4.yml
-securibench/Pred5.yml
-securibench/Pred8.yml
-securibench/Refl1.yml
-securibench/Refl2.yml
-securibench/Refl3.yml
-securibench/Refl4.yml
-securibench/Sanitizers1.yml
-securibench/Sanitizers4.yml
-securibench/Sanitizers5.yml
-securibench/Session1.yml
-securibench/Session2.yml
-securibench/Session3.yml
+./algorithms/BellmanFord-FunSat02.yml:    expected_verdict: false
+./algorithms/BellmanFord-FunUnsat01.yml:    expected_verdict: false
+./algorithms/BellmanFord-FunUnsat02.yml:    expected_verdict: false
+./algorithms/BellmanFord-MemUnsat01.yml:    expected_verdict: false
+./algorithms/BellmanFord-MemUnsat02.yml:    expected_verdict: false
+./algorithms/BinaryTreeSearch-FunUnsat01.yml:    expected_verdict: false
+./algorithms/BinaryTreeSearch-MemUnsat01.yml:    expected_verdict: false
+./algorithms/BinaryTreeSearch-MemUnsat02.yml:    expected_verdict: false
+./algorithms/InsertionSort-FunUnsat01.yml:    expected_verdict: false
+./algorithms/InsertionSort-MemUnsat01.yml:    expected_verdict: false
+./algorithms/MergeSortIterative-FunUnsat01.yml:    expected_verdict: false
+./algorithms/MergeSortIterative-MemSat01.yml:    expected_verdict: false
+./algorithms/MergeSortIterative-MemUnsat01.yml:    expected_verdict: false
+./algorithms/RedBlackTree-FunUnsat01.yml:    expected_verdict: false
+./algorithms/RedBlackTree-MemUnsat01.yml:    expected_verdict: false
+./algorithms/SortedListInsert-FunUnsat01.yml:    expected_verdict: false
+./algorithms/SortedListInsert-MemUnsat01.yml:    expected_verdict: false
+./algorithms/Trie-FunUnsat01.yml:    expected_verdict: false
+./algorithms/Trie-MemUnsat01.yml:    expected_verdict: false
+./algorithms/Tsp-FunSat01.yml:    expected_verdict: false
+./algorithms/Tsp-FunUnsat01.yml:    expected_verdict: false
+./algorithms/Tsp-MemUnsat01.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral10.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral11.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral12.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral13.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral14.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral15.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral16.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral17.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral18.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral19.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral1.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral20.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral21.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral22.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral27.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral28.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral29.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral2.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral30.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral31.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral32.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral33.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral34.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral35.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral36.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral38.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral39.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral40.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral41.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral42.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral43.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral44.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral45.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral48.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral49.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral4.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral50.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral51.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral52.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral53.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral54.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral56.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral57.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral58.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral59.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral60.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral61.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral62.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral63.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral64.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral65.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral66.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral67.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral68.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral69.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral6.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral71.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral72.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral73.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral74.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral75.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral76.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral77.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral81.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral84.yml:    expected_verdict: false
+./float-nonlinear-calculation/coral9.yml:    expected_verdict: false
+./float-nonlinear-calculation/EulerMethod.yml:    expected_verdict: false
+./float-nonlinear-calculation/MathSin.yml:    expected_verdict: false
+./float-nonlinear-calculation/Optimization1.yml:    expected_verdict: false
+./float-nonlinear-calculation/Optimization2.yml:    expected_verdict: false
+./float-nonlinear-calculation/Optimization3.yml:    expected_verdict: false
+./float-nonlinear-calculation/Optimization4.yml:    expected_verdict: false
+./float-nonlinear-calculation/Optimization5.yml:    expected_verdict: false
+./float-nonlinear-calculation/Optimization6.yml:    expected_verdict: false
+./java-ranger-regression/LoopCharAt.yml:    expected_verdict: false
+./java-ranger-regression/nanoxml_eqchk/nanoxml_prop2.yml:    expected_verdict: false
+./java-ranger-regression/nanoxml_eqchk/nanoxml_prop3.yml:    expected_verdict: false
+./java-ranger-regression/printtokens_eqchk/printtokens_prop2.yml:    expected_verdict: false
+./java-ranger-regression/replace5_eqchk/replace5_prop2.yml:    expected_verdict: false
+./java-ranger-regression/siena_eqchk/siena_prop2.yml:    expected_verdict: false
+./java-ranger-regression/TCAS_prop1.yml:    expected_verdict: false
+./java-ranger-regression/WBS/WBS_prop1.yml:    expected_verdict: false
+./java-ranger-regression/WBS/WBS_prop3.yml:    expected_verdict: false
+./java-ranger-regression/WBS/WBS_prop4.yml:    expected_verdict: false
+./jayhorn-recursive/Ackermann01.yml:    expected_verdict: false
+./jayhorn-recursive/InfiniteLoop.yml:    expected_verdict: false
+./jayhorn-recursive/UnsatAckermann01.yml:    expected_verdict: false
+./jayhorn-recursive/UnsatAddition01.yml:    expected_verdict: false
+./jayhorn-recursive/UnsatAddition02.yml:    expected_verdict: false
+./jayhorn-recursive/UnsatEvenOdd01.yml:    expected_verdict: false
+./jayhorn-recursive/UnsatFibonacci01.yml:    expected_verdict: false
+./jayhorn-recursive/UnsatFibonacci02.yml:    expected_verdict: false
+./jayhorn-recursive/UnsatMccarthy91.yml:    expected_verdict: false
+./jbmc-regression/ArithmeticException1.yml:    expected_verdict: false
+./jbmc-regression/ArithmeticException6.yml:    expected_verdict: false
+./jbmc-regression/ArrayIndexOutOfBoundsException1.yml:    expected_verdict: false
+./jbmc-regression/ArrayIndexOutOfBoundsException2.yml:    expected_verdict: false
+./jbmc-regression/ArrayIndexOutOfBoundsException3.yml:    expected_verdict: false
+./jbmc-regression/assert2.yml:    expected_verdict: false
+./jbmc-regression/assert3.yml:    expected_verdict: false
+./jbmc-regression/assert4.yml:    expected_verdict: false
+./jbmc-regression/athrow1.yml:    expected_verdict: false
+./jbmc-regression/BufferedReaderReadLine.yml:    expected_verdict: false
+./jbmc-regression/bug-test-gen-095.yml:    expected_verdict: false
+./jbmc-regression/CharSequenceBug.yml:    expected_verdict: false
+./jbmc-regression/ClassCastException1.yml:    expected_verdict: false
+./jbmc-regression/ClassCastException3.yml:    expected_verdict: false
+./jbmc-regression/exceptions10.yml:    expected_verdict: false
+./jbmc-regression/exceptions11.yml:    expected_verdict: false
+./jbmc-regression/exceptions12.yml:    expected_verdict: false
+./jbmc-regression/exceptions13.yml:    expected_verdict: false
+./jbmc-regression/exceptions16.yml:    expected_verdict: false
+./jbmc-regression/exceptions1.yml:    expected_verdict: false
+./jbmc-regression/exceptions2.yml:    expected_verdict: false
+./jbmc-regression/exceptions3.yml:    expected_verdict: false
+./jbmc-regression/exceptions6.yml:    expected_verdict: false
+./jbmc-regression/exceptions7.yml:    expected_verdict: false
+./jbmc-regression/exceptions8.yml:    expected_verdict: false
+./jbmc-regression/interface1.yml:    expected_verdict: false
+./jbmc-regression/java_append_char.yml:    expected_verdict: false
+./jbmc-regression/NegativeArraySizeException1.yml:    expected_verdict: false
+./jbmc-regression/NegativeArraySizeException2.yml:    expected_verdict: false
+./jbmc-regression/NullPointerException2.yml:    expected_verdict: false
+./jbmc-regression/NullPointerException3.yml:    expected_verdict: false
+./jbmc-regression/NullPointerException4.yml:    expected_verdict: false
+./jbmc-regression/RegexMatches02.yml:    expected_verdict: false
+./jbmc-regression/RegexSubstitution02.yml:    expected_verdict: false
+./jbmc-regression/return1.yml:    expected_verdict: false
+./jbmc-regression/return2.yml:    expected_verdict: false
+./jbmc-regression/StaticCharMethods02.yml:    expected_verdict: false
+./jbmc-regression/StaticCharMethods03.yml:    expected_verdict: false
+./jbmc-regression/StaticCharMethods04.yml:    expected_verdict: false
+./jbmc-regression/StaticCharMethods05.yml:    expected_verdict: false
+./jbmc-regression/StringBuilderAppend02.yml:    expected_verdict: false
+./jbmc-regression/StringBuilderCapLen02.yml:    expected_verdict: false
+./jbmc-regression/StringBuilderCapLen03.yml:    expected_verdict: false
+./jbmc-regression/StringBuilderCapLen04.yml:    expected_verdict: false
+./jbmc-regression/StringBuilderChars02.yml:    expected_verdict: false
+./jbmc-regression/StringBuilderChars03.yml:    expected_verdict: false
+./jbmc-regression/StringBuilderChars04.yml:    expected_verdict: false
+./jbmc-regression/StringBuilderChars05.yml:    expected_verdict: false
+./jbmc-regression/StringBuilderChars06.yml:    expected_verdict: false
+./jbmc-regression/StringBuilderConstructors02.yml:    expected_verdict: false
+./jbmc-regression/StringBuilderInsertDelete02.yml:    expected_verdict: false
+./jbmc-regression/StringBuilderInsertDelete03.yml:    expected_verdict: false
+./jbmc-regression/StringCompare02.yml:    expected_verdict: false
+./jbmc-regression/StringCompare03.yml:    expected_verdict: false
+./jbmc-regression/StringCompare04.yml:    expected_verdict: false
+./jbmc-regression/StringCompare05.yml:    expected_verdict: false
+./jbmc-regression/StringConcatenation02.yml:    expected_verdict: false
+./jbmc-regression/StringConcatenation03.yml:    expected_verdict: false
+./jbmc-regression/StringConcatenation04.yml:    expected_verdict: false
+./jbmc-regression/StringConstructors02.yml:    expected_verdict: false
+./jbmc-regression/StringConstructors03.yml:    expected_verdict: false
+./jbmc-regression/StringConstructors04.yml:    expected_verdict: false
+./jbmc-regression/StringConstructors05.yml:    expected_verdict: false
+./jbmc-regression/StringContains01.yml:    expected_verdict: false
+./jbmc-regression/StringContains02.yml:    expected_verdict: false
+./jbmc-regression/StringIndexMethods02.yml:    expected_verdict: false
+./jbmc-regression/StringIndexMethods03.yml:    expected_verdict: false
+./jbmc-regression/StringIndexMethods04.yml:    expected_verdict: false
+./jbmc-regression/StringIndexMethods05.yml:    expected_verdict: false
+./jbmc-regression/StringMiscellaneous02.yml:    expected_verdict: false
+./jbmc-regression/StringMiscellaneous03.yml:    expected_verdict: false
+./jbmc-regression/StringStartEnd02.yml:    expected_verdict: false
+./jbmc-regression/StringStartEnd03.yml:    expected_verdict: false
+./jbmc-regression/StringValueOf02.yml:    expected_verdict: false
+./jbmc-regression/StringValueOf03.yml:    expected_verdict: false
+./jbmc-regression/StringValueOf04.yml:    expected_verdict: false
+./jbmc-regression/StringValueOf05.yml:    expected_verdict: false
+./jbmc-regression/StringValueOf06.yml:    expected_verdict: false
+./jbmc-regression/StringValueOf07.yml:    expected_verdict: false
+./jbmc-regression/StringValueOf08.yml:    expected_verdict: false
+./jbmc-regression/StringValueOf09.yml:    expected_verdict: false
+./jbmc-regression/StringValueOf10.yml:    expected_verdict: false
+./jbmc-regression/SubString02.yml:    expected_verdict: false
+./jbmc-regression/SubString03.yml:    expected_verdict: false
+./jbmc-regression/TokenTest02.yml:    expected_verdict: false
+./jbmc-regression/Validate02.yml:    expected_verdict: false
+./jbmc-regression/virtual2.yml:    expected_verdict: false
+./jdart-regression/addition01.yml:    expected_verdict: false
+./jdart-regression/array-iteration01.yml:    expected_verdict: false
+./jdart-regression/boundcheck100.yml:    expected_verdict: false
+./jdart-regression/boundcheck200.yml:    expected_verdict: false
+./jdart-regression/boundcheck30.yml:    expected_verdict: false
+./jdart-regression/double2long.yml:    expected_verdict: false
+./jdart-regression/float.yml:    expected_verdict: false
+./jdart-regression/OverapproximationString01.yml:    expected_verdict: false
+./jdart-regression/radians.yml:    expected_verdict: false
+./jdart-regression/shifting2.yml:    expected_verdict: false
+./jdart-regression/shifting3.yml:    expected_verdict: false
+./jdart-regression/shifting.yml:    expected_verdict: false
+./jdart-regression/URLDecoder02.yml:    expected_verdict: false
+./jpf-regression/ExDarko_false.yml:    expected_verdict: false
+./jpf-regression/ExException_false.yml:    expected_verdict: false
+./jpf-regression/ExGenSymExe_false.yml:    expected_verdict: false
+./jpf-regression/ExLazy_false.yml:    expected_verdict: false
+./jpf-regression/ExMIT_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe10_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe11_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe12_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe13_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe14_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe15_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe16_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe17_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe18_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe19_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe1_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe20_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe21_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe25_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe26_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe27_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe28_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe29_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe2_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe3_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe4_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe5_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe6_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe7_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe8_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe9_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeArrays_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeBool_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeComplexMath_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeD2I_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeD2L_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeF2I_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeF2L_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExe_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeFNEG_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeGetStatic_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeI2D_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeI2F_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeLCMP_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeLongBytecodes_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeResearch_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeSimple_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeSuzette_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeSwitch_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeTestAssignments_false.yml:    expected_verdict: false
+./jpf-regression/ExSymExeTestClassFields_false.yml:    expected_verdict: false
+./jpf-regression/TestLazy_false.yml:    expected_verdict: false
+./juliet-java/CWE369_Divide_by_Zero__float_connect_tcp_divide_01_bad_version2.yml:    expected_verdict: false
+./juliet-java/CWE369_Divide_by_Zero__float_connect_tcp_divide_01_bad.yml:    expected_verdict: false
+./juliet-java/CWE369_Divide_by_Zero__float_connect_tcp_divide_81a_bad_version2.yml:    expected_verdict: false
+./juliet-java/CWE369_Divide_by_Zero__float_connect_tcp_divide_81a_bad.yml:    expected_verdict: false
+./juliet-java/CWE369_Divide_by_Zero__float_console_readLine_divide_54_bad_version2.yml:    expected_verdict: false
+./juliet-java/CWE369_Divide_by_Zero__float_console_readLine_divide_54_bad.yml:    expected_verdict: false
+./MinePump/spec1-5_product10.yml:    expected_verdict: false
+./MinePump/spec1-5_product11.yml:    expected_verdict: false
+./MinePump/spec1-5_product12.yml:    expected_verdict: false
+./MinePump/spec1-5_product13.yml:    expected_verdict: false
+./MinePump/spec1-5_product14.yml:    expected_verdict: false
+./MinePump/spec1-5_product15.yml:    expected_verdict: false
+./MinePump/spec1-5_product16.yml:    expected_verdict: false
+./MinePump/spec1-5_product17.yml:    expected_verdict: false
+./MinePump/spec1-5_product18.yml:    expected_verdict: false
+./MinePump/spec1-5_product19.yml:    expected_verdict: false
+./MinePump/spec1-5_product1.yml:    expected_verdict: false
+./MinePump/spec1-5_product20.yml:    expected_verdict: false
+./MinePump/spec1-5_product21.yml:    expected_verdict: false
+./MinePump/spec1-5_product22.yml:    expected_verdict: false
+./MinePump/spec1-5_product23.yml:    expected_verdict: false
+./MinePump/spec1-5_product24.yml:    expected_verdict: false
+./MinePump/spec1-5_product25.yml:    expected_verdict: false
+./MinePump/spec1-5_product26.yml:    expected_verdict: false
+./MinePump/spec1-5_product27.yml:    expected_verdict: false
+./MinePump/spec1-5_product28.yml:    expected_verdict: false
+./MinePump/spec1-5_product29.yml:    expected_verdict: false
+./MinePump/spec1-5_product2.yml:    expected_verdict: false
+./MinePump/spec1-5_product30.yml:    expected_verdict: false
+./MinePump/spec1-5_product31.yml:    expected_verdict: false
+./MinePump/spec1-5_product32.yml:    expected_verdict: false
+./MinePump/spec1-5_product33.yml:    expected_verdict: false
+./MinePump/spec1-5_product34.yml:    expected_verdict: false
+./MinePump/spec1-5_product35.yml:    expected_verdict: false
+./MinePump/spec1-5_product36.yml:    expected_verdict: false
+./MinePump/spec1-5_product37.yml:    expected_verdict: false
+./MinePump/spec1-5_product38.yml:    expected_verdict: false
+./MinePump/spec1-5_product39.yml:    expected_verdict: false
+./MinePump/spec1-5_product3.yml:    expected_verdict: false
+./MinePump/spec1-5_product40.yml:    expected_verdict: false
+./MinePump/spec1-5_product41.yml:    expected_verdict: false
+./MinePump/spec1-5_product42.yml:    expected_verdict: false
+./MinePump/spec1-5_product43.yml:    expected_verdict: false
+./MinePump/spec1-5_product44.yml:    expected_verdict: false
+./MinePump/spec1-5_product45.yml:    expected_verdict: false
+./MinePump/spec1-5_product46.yml:    expected_verdict: false
+./MinePump/spec1-5_product47.yml:    expected_verdict: false
+./MinePump/spec1-5_product48.yml:    expected_verdict: false
+./MinePump/spec1-5_product49.yml:    expected_verdict: false
+./MinePump/spec1-5_product4.yml:    expected_verdict: false
+./MinePump/spec1-5_product50.yml:    expected_verdict: false
+./MinePump/spec1-5_product51.yml:    expected_verdict: false
+./MinePump/spec1-5_product52.yml:    expected_verdict: false
+./MinePump/spec1-5_product53.yml:    expected_verdict: false
+./MinePump/spec1-5_product54.yml:    expected_verdict: false
+./MinePump/spec1-5_product55.yml:    expected_verdict: false
+./MinePump/spec1-5_product56.yml:    expected_verdict: false
+./MinePump/spec1-5_product5.yml:    expected_verdict: false
+./MinePump/spec1-5_product6.yml:    expected_verdict: false
+./MinePump/spec1-5_product7.yml:    expected_verdict: false
+./MinePump/spec1-5_product8.yml:    expected_verdict: false
+./MinePump/spec1-5_product9.yml:    expected_verdict: false
+./rtems-lock-model/lock-00-01-10.yml:    expected_verdict: false
+./securibench/Aliasing1.yml:    expected_verdict: false
+./securibench/Aliasing4.yml:    expected_verdict: false
+./securibench/Aliasing5.yml:    expected_verdict: false
+./securibench/Aliasing6.yml:    expected_verdict: false
+./securibench/Arrays10.yml:    expected_verdict: false
+./securibench/Arrays1.yml:    expected_verdict: false
+./securibench/Arrays2.yml:    expected_verdict: false
+./securibench/Arrays3.yml:    expected_verdict: false
+./securibench/Arrays4.yml:    expected_verdict: false
+./securibench/Arrays6.yml:    expected_verdict: false
+./securibench/Arrays7.yml:    expected_verdict: false
+./securibench/Arrays8.yml:    expected_verdict: false
+./securibench/Arrays9.yml:    expected_verdict: false
+./securibench/Basic10.yml:    expected_verdict: false
+./securibench/Basic11.yml:    expected_verdict: false
+./securibench/Basic12.yml:    expected_verdict: false
+./securibench/Basic15.yml:    expected_verdict: false
+./securibench/Basic16.yml:    expected_verdict: false
+./securibench/Basic17.yml:    expected_verdict: false
+./securibench/Basic18.yml:    expected_verdict: false
+./securibench/Basic19.yml:    expected_verdict: false
+./securibench/Basic1.yml:    expected_verdict: false
+./securibench/Basic20.yml:    expected_verdict: false
+./securibench/Basic21.yml:    expected_verdict: false
+./securibench/Basic24.yml:    expected_verdict: false
+./securibench/Basic25.yml:    expected_verdict: false
+./securibench/Basic26.yml:    expected_verdict: false
+./securibench/Basic27.yml:    expected_verdict: false
+./securibench/Basic29.yml:    expected_verdict: false
+./securibench/Basic2.yml:    expected_verdict: false
+./securibench/Basic30.yml:    expected_verdict: false
+./securibench/Basic31.yml:    expected_verdict: false
+./securibench/Basic32.yml:    expected_verdict: false
+./securibench/Basic33.yml:    expected_verdict: false
+./securibench/Basic34.yml:    expected_verdict: false
+./securibench/Basic35.yml:    expected_verdict: false
+./securibench/Basic37.yml:    expected_verdict: false
+./securibench/Basic38.yml:    expected_verdict: false
+./securibench/Basic39.yml:    expected_verdict: false
+./securibench/Basic3.yml:    expected_verdict: false
+./securibench/Basic4.yml:    expected_verdict: false
+./securibench/Basic5.yml:    expected_verdict: false
+./securibench/Basic7.yml:    expected_verdict: false
+./securibench/Basic9.yml:    expected_verdict: false
+./securibench/Collections10.yml:    expected_verdict: false
+./securibench/Collections12.yml:    expected_verdict: false
+./securibench/Collections13.yml:    expected_verdict: false
+./securibench/Collections14.yml:    expected_verdict: false
+./securibench/Collections1.yml:    expected_verdict: false
+./securibench/Collections2.yml:    expected_verdict: false
+./securibench/Collections3.yml:    expected_verdict: false
+./securibench/Collections4.yml:    expected_verdict: false
+./securibench/Collections5.yml:    expected_verdict: false
+./securibench/Collections6.yml:    expected_verdict: false
+./securibench/Collections7.yml:    expected_verdict: false
+./securibench/Datastructures1.yml:    expected_verdict: false
+./securibench/Datastructures2.yml:    expected_verdict: false
+./securibench/Datastructures3.yml:    expected_verdict: false
+./securibench/Datastructures5.yml:    expected_verdict: false
+./securibench/Datastructures6.yml:    expected_verdict: false
+./securibench/Factories1.yml:    expected_verdict: false
+./securibench/Factories2.yml:    expected_verdict: false
+./securibench/Factories3.yml:    expected_verdict: false
+./securibench/Inter10.yml:    expected_verdict: false
+./securibench/Inter11.yml:    expected_verdict: false
+./securibench/Inter12.yml:    expected_verdict: false
+./securibench/Inter13.yml:    expected_verdict: false
+./securibench/Inter14.yml:    expected_verdict: false
+./securibench/Inter1.yml:    expected_verdict: false
+./securibench/Inter2.yml:    expected_verdict: false
+./securibench/Inter3.yml:    expected_verdict: false
+./securibench/Inter4.yml:    expected_verdict: false
+./securibench/Inter5.yml:    expected_verdict: false
+./securibench/Inter6.yml:    expected_verdict: false
+./securibench/Inter7.yml:    expected_verdict: false
+./securibench/Inter8.yml:    expected_verdict: false
+./securibench/Inter9.yml:    expected_verdict: false
+./securibench/Pred2.yml:    expected_verdict: false
+./securibench/Pred4.yml:    expected_verdict: false
+./securibench/Pred5.yml:    expected_verdict: false
+./securibench/Pred8.yml:    expected_verdict: false
+./securibench/Refl1.yml:    expected_verdict: false
+./securibench/Refl2.yml:    expected_verdict: false
+./securibench/Refl3.yml:    expected_verdict: false
+./securibench/Refl4.yml:    expected_verdict: false
+./securibench/Sanitizers1.yml:    expected_verdict: false
+./securibench/Sanitizers4.yml:    expected_verdict: false
+./securibench/Sanitizers5.yml:    expected_verdict: false
+./securibench/Session1.yml:    expected_verdict: false
+./securibench/Session2.yml:    expected_verdict: false
+./securibench/Session3.yml:    expected_verdict: false
