@@ -37,13 +37,13 @@ while IFS= read -r line || [[ -n "$line" ]]; do
           echo "running crash for file $crashfile"
           cd "$dirname_path/target/classes" || exit 1
           echo "$jqf_repro_shell/jqf-repro" -c .:.. MainTest mainTest "$crashfile"
-          "$jqf_repro_shell/jqf-repro" -c .:.. MainTest mainTest "$crashfile" | tee -a "$repro_log"
+          timeout 300s "$jqf_repro_shell/jqf-repro" -c .:.. MainTest mainTest "$crashfile" | tee -a "$repro_log"
       done
   else
       echo "No crash files to process."
       echo "first attempting running on the seed"
       cd "$dirname_path/target/classes" || exit 1
-      "$jqf_repro_shell/jqf-repro" -c .:.. MainTest mainTest "../../random/random1000.bin" | tee -a "$repro_log"
+      timeout 300s "$jqf_repro_shell/jqf-repro" -c .:.. MainTest mainTest "../../random/random1000.bin" | tee -a "$repro_log"
   fi
 
   grep "java.lang.AssertionError" "$repro_log" > /dev/null

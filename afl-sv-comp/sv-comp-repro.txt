@@ -95,7 +95,15 @@ float-nonlinear-calculation/Optimization4.yml
 float-nonlinear-calculation/Optimization5.yml
 float-nonlinear-calculation/Optimization6.yml
 java-ranger-regression/LoopCharAt.yml
+java-ranger-regression/nanoxml_eqchk/nanoxml_prop2.yml
+java-ranger-regression/nanoxml_eqchk/nanoxml_prop3.yml
+java-ranger-regression/printtokens_eqchk/printtokens_prop2.yml
+java-ranger-regression/replace5_eqchk/replace5_prop2.yml
+java-ranger-regression/siena_eqchk/siena_prop2.yml
 java-ranger-regression/TCAS_prop1.yml
+java-ranger-regression/WBS/WBS_prop1.yml
+java-ranger-regression/WBS/WBS_prop3.yml
+java-ranger-regression/WBS/WBS_prop4.yml
 jayhorn-recursive/Ackermann01.yml
 jayhorn-recursive/InfiniteLoop.yml
 jayhorn-recursive/UnsatAckermann01.yml
@@ -319,6 +327,7 @@ MinePump/spec1-5_product6.yml
 MinePump/spec1-5_product7.yml
 MinePump/spec1-5_product8.yml
 MinePump/spec1-5_product9.yml
+rtems-lock-model/lock-00-01-10.yml
 securibench/Aliasing1.yml
 securibench/Aliasing4.yml
 securibench/Aliasing5.yml

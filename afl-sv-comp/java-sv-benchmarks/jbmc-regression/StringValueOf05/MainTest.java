@@ -23,7 +23,7 @@ public class MainTest {
     @Fuzz
     public void mainTest(InputStream input) throws IOException {
     Verifier.input = input;
-    args = new String[1];
+    String[] args = new String[1];
     args[0] = Verifier.nondetString();
     System.out.println("args[0]=" + args[0]);
     if (args[0].length() < 1) return;

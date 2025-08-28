@@ -141,7 +141,7 @@ public class MainTest {
     return copy;
   }
 
-  public static int[] makeRandomArray(int n) {
+  public static int[] makeRandomArray(int n) throws IOException{
     int[] a = new int[n];
     for (int i = 0; i < a.length; i++) a[i] = Verifier.nondetInt();
     return a;
