@@ -39,7 +39,7 @@ import org.sosy_lab.sv_benchmarks.Verifier;
 @RunWith(JQF.class)
 public class MainTest {
 
-  public static void test(Main x, int y) {
+  public static void test(MainTest x, int y) {
     if (x == null && y == 0) {
       System.out.println(1);
     } else {
