@@ -13,7 +13,7 @@ Important notes about usage of this repo, where DIR refers to the top-level dire
      - [write-tests-main.sh](afl-sv-comp/scripts/write-tests-main.sh) which uses the [class_to_unit_test.py](afl-sv-comp/scripts/class_to_unit_test.py) to generate a unit test for the sv-comp benchmarks. This script is used to generate the unit tests for the sv-comp benchmarks.
      - [run-sv-comp-repro.sh](afl-sv-comp/scripts/run-sv-comp-repro.sh) is used to run reproducibility on sv-comp benchmarks for which we have some results for. It uses the crashed input if one is found, otherwise it uses the random input that is used as a default.
      - [fliter-assume.sh](afl-sv-comp/scripts/fliter-assume.sh), this is unused script, which we used in initial runs of experiments, were we selected benchmarks that do not have an assume statement in their code. But now, as we have supported assume statements, this script is not used anymore.
-     - Finally, we have [expirement-logs](afl-sv-comp/expirement-logs) which contains all the logs for running jqf-afl on sv-comp benchmarks that are report in the paper.  
+
 
 
 ## Running jqf-afl on sv-comp benchmarks
