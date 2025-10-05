@@ -175,7 +175,6 @@ if [ "$?" -ne 0 ]; then
 fi
 echo "  Pilot run success! Launching AFL now..."
 
-echo "$AFL_FUZZ $afl_options $target $target_options $class $method @@"
 
 # Ready to go
 exec "$AFL_FUZZ" $afl_options "$target" $target_options "$class" "$method" @@
